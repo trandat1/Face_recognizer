@@ -2,10 +2,16 @@
 __pycache__/
 *.py[codz]
 *$py.class
-
+/env/
 # C extensions
 *.so
-
+*.jpg
+training/
+validation/
+output/
+/test.py
+/detector.py
+test/
 # Distribution / packaging
 .Python
 build/

@@ -26,20 +26,20 @@ if __name__ == "__main__":
         # bắt buộc đăng nhập root trước
         if Auth.verify_root_login():
             face_add = FaceAdd()
-            face_add.add_face_via_webcam_flow(model=args.model)
+            face_add.add_face_via_webcam_flow()
         else:
             print("❌ Root login failed!")
 
     elif args.train:
-        core.encode_known_faces(model=args.model)
+        core.encode_known_faces()
 
     elif args.validate:
-        core.validate(model=args.model)
+        core.validate()
 
     elif args.test:
         if not args.file:
             raise SystemExit("--test cần kèm đường dẫn ảnh bằng -f")
-        core.recognize_faces_from_image(image_location=args.file, model=args.model)
+        core.recognize_faces_from_image(image_location=args.file)
 
     elif args.webcam:
-        core.recognize_from_webcam(model=args.model)
+        core.recognize_from_webcam()
